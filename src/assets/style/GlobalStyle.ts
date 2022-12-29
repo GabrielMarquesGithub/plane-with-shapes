@@ -9,12 +9,23 @@ const GlobalStyle = createGlobalStyle`
   box-sizing: border-box;
 }
 
+html{
+  @media (max-width: 1050px) {
+    font-size: 100%;
+  }
+  @media (max-width: 850px) {
+    font-size: 90%;
+  }
+  @media (max-width: 650px) {
+    font-size: 80%;
+  }
+}
+
 body{
   height: 100vh;
 
   -webkit-font-smoothing: antialiased;
-  background: ${(props) => props.theme.colors.blue100};
-
+  background: ${(props) => props.theme.colors.dark800};
 }
 body,
 input,
