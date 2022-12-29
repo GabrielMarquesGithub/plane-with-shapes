@@ -1,7 +1,7 @@
-import HomeContainer from "./components/HomeContainer";
+import Home from "./pages/Home";
 
 function App() {
-  return <HomeContainer />;
+  return <Home />;
 }
 
 export default App;

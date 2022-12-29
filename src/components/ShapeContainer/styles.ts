@@ -1,12 +1,20 @@
 import styled from "styled-components";
 
-export const Container = styled.section`
-  width: 80vw;
+export const Container = styled.main`
+  width: 1080px;
   height: 85vh;
   padding: 1rem;
-  border: 3px solid ${(props) => props.theme.blue900};
+  margin: 0 auto;
+  border: 2px solid ${(props) => props.theme.colors.red500};
+
   position: relative;
   overflow: hidden;
+
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+
   border-radius: 1rem;
-  background: ${(props) => props.theme.gray100};
+  background-image: ${(props) => props.theme.gradients.grid};
+  background-size: 2rem 2rem;
 `;

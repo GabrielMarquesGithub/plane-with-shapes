@@ -1,4 +1,5 @@
 import { createGlobalStyle } from "styled-components";
+import { backgroundMoveAnimation } from "./variables/animations";
 
 const GlobalStyle = createGlobalStyle`
 
@@ -9,7 +10,11 @@ const GlobalStyle = createGlobalStyle`
 }
 
 body{
+  height: 100vh;
+
   -webkit-font-smoothing: antialiased;
+  background: ${(props) => props.theme.colors.blue100};
+
 }
 body,
 input,

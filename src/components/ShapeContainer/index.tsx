@@ -1,18 +1,26 @@
-import { MouseEvent } from "react";
+import { MouseEvent, useCallback, useEffect, useRef } from "react";
 
 import { positionType } from "../../types/ShapeContainerTypes";
 
 import { Container } from "./styles";
 
-import DefaultShape from "./GeometricShapes/DefaultShape";
-import useShapes from "../../hooks/useShapes";
+import useShapes from "../../hooks/useShapes/useShapes";
+import GeometricShape from "./GeometricShape";
+import ShapeControl from "./ShapeControl";
 
-type ShapeContainerPropsType = {};
+const ShapeContainer = () => {
+  const {
+    shapes,
+    selectedShape,
+    addShape,
+    removeShape,
+    selectShape,
+    returnPreviousState,
+    returnLaterState,
+  } = useShapes();
 
-const ShapeContainer = ({}: ShapeContainerPropsType) => {
-  const { shapes, addShape, removeShape } = useShapes();
-
-  const handleClick = (e: MouseEvent) => {
+  //lidar com ações de click
+  const handleClickOnContainer = (e: MouseEvent) => {
     //traduzindo para a posição desejada
     const containerPosition = e.currentTarget.getBoundingClientRect();
     const position = {
@@ -22,20 +30,37 @@ const ShapeContainer = ({}: ShapeContainerPropsType) => {
     addShape(position);
   };
 
-  const handleShapeOnClick = (position: positionType) => {
+  const handleClickShape = (position: positionType) => {
     removeShape(position);
   };
 
+  //lidar com ações keyboard
+  const handleKeyDown = (event: KeyboardEvent) => {
+    if (event.ctrlKey && event.key === "z") {
+      returnPreviousState();
+    }
+    if (event.ctrlKey && event.key === "y") {
+      returnLaterState();
+    }
+  };
+
+  useEffect(() => {
+    window.addEventListener("keydown", handleKeyDown);
+    return () => window.removeEventListener("keydown", handleKeyDown);
+  }, [returnPreviousState, returnLaterState]);
+
   return (
-    <Container onClick={handleClick}>
+    <Container onClick={handleClickOnContainer}>
       {shapes?.map((shape, index) => (
-        <DefaultShape
+        <GeometricShape
           position={shape.position}
           color={shape.color}
+          shape={shape.shape}
           key={index}
-          onClick={handleShapeOnClick}
+          onClick={handleClickShape}
         />
       ))}
+      <ShapeControl currentShape={selectedShape} changeShape={selectShape} />
     </Container>
   );
 };
