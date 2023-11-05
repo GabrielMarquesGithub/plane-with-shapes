@@ -6,7 +6,7 @@ Você pode acessar a versão implantada deste projeto [aqui](https://timely-pony
 
 ## Imagens
 
-![Imagem da página inicial do projeto](https://github.com/NikisGabriel/cart-react/blob/main/documents/cart-app-home.png)
+![Imagem da página inicial do projeto](https://github.com/NikisGabriel/plane-with-shapes/blob/main/documents/plane-with-shapes.png)
 
 ## Pré-requisitos
 
