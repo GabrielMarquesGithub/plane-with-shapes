@@ -1,4 +1,4 @@
-import { MouseEvent, useCallback, useEffect, useRef } from "react";
+import { MouseEvent, useEffect } from "react";
 
 import { positionType } from "../../types/ShapeContainerTypes";
 

@@ -1,16 +1,80 @@
-# [Adicione Formas](https://timely-pony-72338e.netlify.app/)
-O App é uma ideia simples e foi criado visando a prática sobre alterações de States em aplicações React
-### Deploy
-* Se tratando de um SPA estático o App recebeu deploy na Netlify - https://timely-pony-72338e.netlify.app/
+# [Plane-With-Shapes](https://timely-pony-72338e.netlify.app/)
 
-### Ferramentas 
-* **TypeScript** - Superset do JS visando qualidade do código 
-* **React** - Biblioteca utilizada como base para a construção do App
-* **Styled-Components** - Para estilização em ambiente React
+## Deploy
 
-#### Página inicial do App
-##### Eu particularmente gosto da combinação de cores escuras com claras isso é visível na maioria das estilizações que faço hehe
-![imagem da página inicial do App](https://github.com/NikisGabriel/plane-with-shapes/blob/main/public/shape%20home.png)
+Você pode acessar a versão implantada deste projeto [aqui](https://timely-pony-72338e.netlify.app/).
 
-##### Observações 
-Creio que para maior eficiência seria ideal a adição de ferramentas como o useCallback ou Memo para evitar recriações ou re-renderização de componentes.
+## Imagens
+
+![Imagem da página inicial do projeto](https://github.com/NikisGabriel/cart-react/blob/main/documents/cart-app-home.png)
+
+## Pré-requisitos
+
+Antes de começar, certifique-se de ter instalado o Node.js e o Git em sua máquina.
+
+## Passo a passo
+
+1. Clone o repositório:
+
+   ```bash
+   git clone https://github.com/NikisGabriel/plane-with-shapes.git
+   ```
+
+2. Navegue até a pasta da aplicação:
+
+   ```bash
+   cd plane-with-shapes
+   ```
+
+3. Instale as dependências:
+
+   ```bash
+   npm install
+   ```
+
+4. Inicie o servidor de desenvolvimento:
+
+   ```bash
+   npm run dev
+   ```
+
+## Tecnologias Utilizadas
+
+- JavaScript
+- TypeScript
+- Git
+- Vite
+- React
+- Styled-components
+
+## Padrões de Codificação
+
+- **Nomenclatura:**
+
+  - Componentes: Utilizam o padrão PascalCase.
+  - Hooks: Seguem o padrão camelCase com o prefixo "use".
+  - Funções: Seguem o padrão camelCase.
+  - Constantes e variáveis: Seguem o padrão camelCase.
+  - Tipos: Recebem o sufixo "Type".
+
+- **Estrutura de Arquivos:**
+  - `src`: Contém o código-fonte da aplicação.
+    - `assets`: Inclui recursos estáticos como imagens, fontes e estilos.
+    - `components`: Reúne componentes React reutilizáveis.
+    - `hooks`: Agrupa hooks personalizados do React.
+    - `pages`: Mantém as páginas da aplicação.
+    - `templates`: Mantém templates de código para facilitar reuso.
+    - `types`: Contém tipos definidos em TypeScript.
+    - `utils`: Mantém funções utilitárias da aplicação.
+    - `App.tsx`: O componente raiz da aplicação React.
+    - `main.tsx`: Ponto de entrada principal da aplicação, responsável por configurar os principais Providers.
+    - `styled.d.ts`: Declarações TypeScript para aprimorar a tipagem do styled-components.
+  - `index.html`: A página principal da aplicação.
+  - `vite.config.ts`: Configurações do Vite.
+  - `tsconfig.json`: Configurações do TypeScript.
+  - `documents`: Pasta destinada à documentação do projeto.
+  - `package.json`: Arquivo para gerenciamento de dependências e informações do projeto.
+
+## Observações
+
+Este projeto é uma ideia simples e foi criado visando a prática sobre alterações de States em aplicações React.
